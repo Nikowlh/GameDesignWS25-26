@@ -40,7 +40,7 @@ public class FBController : MonoBehaviour
     [Header("Components")]
     [SerializeField] CinemachineCamera fpCamera;
     [SerializeField] CharacterController charakterController;
-#region freeze Methods
+    #region freeze Methods
 
     public void SetFrozen(bool state)
     {
@@ -72,9 +72,9 @@ public class FBController : MonoBehaviour
 
     void Update()
     {
-      if (IsFrozen) return;
-      MoveUpdate();
-      LookUpdate();
+        if (IsFrozen) return;
+        MoveUpdate();
+        LookUpdate();
     }
     #endregion
 
@@ -106,7 +106,7 @@ public class FBController : MonoBehaviour
 
     void LookUpdate()
     {
-      Vector2 input = new Vector2(LookInput.x * LookSensitivity.x, LookInput.y * LookSensitivity.y);
+        Vector2 input = new Vector2(LookInput.x * LookSensitivity.x, LookInput.y * LookSensitivity.y);
 
         // looking uon and down
         CurrentPitch -= input.y;
@@ -117,5 +117,5 @@ public class FBController : MonoBehaviour
     }
     #endregion
 
-    
+
 }
