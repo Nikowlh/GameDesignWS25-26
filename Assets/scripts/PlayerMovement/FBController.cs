@@ -2,11 +2,14 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 
 
 [RequireComponent(typeof(CharacterController))]
 public class FBController : MonoBehaviour
 {
+    private DoorInteraction doorInteraction;
+
     [Header("Movement Parameters")]
     public float MoveSpeed = 3.5f;
     public float Acceleration = 15f;
@@ -116,6 +119,11 @@ public class FBController : MonoBehaviour
         transform.Rotate(Vector3.up * input.x);
     }
     #endregion
+
+   
+
+
+
 
 
 }
