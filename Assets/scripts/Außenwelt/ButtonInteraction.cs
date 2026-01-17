@@ -7,11 +7,36 @@ public class ButtonInteraction : MonoBehaviour
 
     [SerializeField] private DoorInteraction doorInteraction;
 
+    [SerializeField]Canvas bar;
+    [SerializeField]Canvas park;
+
 
     public void OnBack()
     {
         doorInteraction.CloseDoor();
         Debug.Log("Drinnen?");
         return;
+    }
+    //Open Bar Canvas / Close Bar Canvas
+    public void BarBetreten()
+    {        
+        bar.gameObject.SetActive(true);
+    }
+    public void BarVerlassen()
+    {
+        bar.gameObject.SetActive(false);
+    }
+
+    public void ParkBetreten()
+    {
+        park.gameObject.SetActive(true);
+    }
+    public void ParkVerlassen()
+    {
+        park.gameObject.SetActive(false);
+    }
+    public void NPC1()
+    {
+        Debug.Log("NPC1 interaction activated.");
     }
 }

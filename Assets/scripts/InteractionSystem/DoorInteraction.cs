@@ -33,7 +33,7 @@ public class DoorInteraction : MonoBehaviour, ImInteractible
             Cursor.lockState = CursorLockMode.None;
             //check if promptCanvas is active and disable it
             Debug.Log("Drauﬂen");
-            Debug.Log(UIInteraction.PromptCanvas);
+           
 
 
             auﬂenCam.Priority = 10;

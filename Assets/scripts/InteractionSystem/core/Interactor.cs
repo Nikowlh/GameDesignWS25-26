@@ -21,9 +21,19 @@ public class Interactor : MonoBehaviour
 
         if (_numFound > 0)
         {
-           var interactible = _colliders[0].GetComponent<ImInteractible>();
+            ImInteractible interactible = null;
 
-             if (interactible != null && Keyboard.current.eKey.wasPressedThisFrame)
+            for (int i = 0; i < _numFound; i++)
+            {
+                if (_colliders[i] == null) continue;
+
+                interactible = _colliders[i].GetComponent<ImInteractible>();
+                if (interactible != null)
+                    break;
+            }
+
+
+            if (interactible != null && Keyboard.current.eKey.wasPressedThisFrame)
               {
                   interactible.Interactor(this);
             }
