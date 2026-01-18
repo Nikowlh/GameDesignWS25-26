@@ -25,11 +25,19 @@ public class UIInteraction : MonoBehaviour
         // Prüfen, ob ein Interactible in Reichweite ist
         bool isInRange = Physics.CheckSphere(transform.position, detectionRadius, interactorMask);
 
-        // Canvas nach 0.7 sekunden anschauen auch erst anzeigen und nur wenn bool otherUiActive false ist
+        // check if otherUiActive is false before enabling the promptCanvas
+        if (otherUiActive)
+        {
+            promptCanvas.enabled = false;
+            return;
+        }
+
+
         if (isInRange)
         {
             if (!otherUiActive)
-            {
+            {// Canvas nach 0.7 sekunden anschauen auch erst anzeigen und nur wenn bool otherUiActive false ist
+                
                 promptCanvas.enabled = true;
             }
         }
