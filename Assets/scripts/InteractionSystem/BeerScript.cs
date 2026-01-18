@@ -16,19 +16,18 @@ public class BeerScript : MonoBehaviour, ImInteractible
     //Method to deaktivate one beer of the array
     private void DeaktivateRandomBeer()
     {
-        if (!beerInHand.activeSelf)
+   
+        int randomIndex = Random.Range(0, beerPrefabs.Length);
+        GameObject selectedBeer = beerPrefabs[randomIndex];
+        if (selectedBeer.activeSelf)
         {
-
-            if (beerPrefabs.Length == 0)
-            {
-
-                int randomIndex = Random.Range(0, beerPrefabs.Length);
-                beerPrefabs[randomIndex].SetActive(false);
-            }
-            else
-            {
-                return;
-            }
+            Debug.Log("Deactivating beer: " + selectedBeer.name);
+            selectedBeer.SetActive(false);
+        }
+        else
+        {
+            // If the selected beer is already deactivated, try again
+            DeaktivateRandomBeer();
         }
     }
 

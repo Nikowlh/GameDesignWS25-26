@@ -11,14 +11,19 @@ public class BedInteraction : MonoBehaviour, ImInteractible
 
     [SerializeField] private FBPlayer player;
 
+    [SerializeField] Canvas pressE;
+
     [SerializeField]Canvas bedMenu;
   
+    [SerializeField] UIInteraction uiInteraction;
     public string InteractionPrompt => prompt;
 
 
     public bool Interactor(Interactor interactor)
     {
-       bedMenu.gameObject.SetActive(true);
+        uiInteraction.otherUiActive = true;
+        bedMenu.gameObject.SetActive(true);
+        pressE.enabled = false;
         player.FreezePlayer(true);
         Cursor.lockState = CursorLockMode.Confined;
         Debug.Log("Bed interaction activated.");

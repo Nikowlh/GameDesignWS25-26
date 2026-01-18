@@ -21,6 +21,8 @@ public class NightManager : MonoBehaviour
         stehlampe.enabled = false;
         Tischlampe.enabled = false;
         RenderSettings.skybox = daySkyboxMaterial;
+        dayCity.gameObject.SetActive(true);
+        nightCity.gameObject.SetActive(false);
     }
     public void SetNight(bool night)
     {
@@ -40,6 +42,30 @@ public class NightManager : MonoBehaviour
             stehlampe.enabled = false;
             Tischlampe.enabled = false;
             skybox.gameObject.SetActive(false);
+            dayCity.gameObject.SetActive(true);
+            nightCity.gameObject.SetActive(false);
+        }
+    }
+    public void SetDay(bool day)
+    {
+        isNight = !day;
+        if (!isNight)
+        {
+            stehlampe.enabled = false;
+            Tischlampe.enabled = false;
+            skybox.gameObject.SetActive(false);
+            RenderSettings.skybox = daySkyboxMaterial;
+            dayCity.gameObject.SetActive(true);
+            nightCity.gameObject.SetActive(false);
+        }
+        else
+        {
+            stehlampe.enabled = true;
+            Tischlampe.enabled = true;
+            skybox.gameObject.SetActive(true);
+            RenderSettings.skybox = nightSkyboxMaterial;
+            dayCity.gameObject.SetActive(false);
+            nightCity.gameObject.SetActive(true);
         }
     }
 }

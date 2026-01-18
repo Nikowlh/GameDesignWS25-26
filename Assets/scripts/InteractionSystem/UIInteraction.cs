@@ -9,6 +9,8 @@ public class UIInteraction : MonoBehaviour
     [SerializeField] private float detectionRadius = 1.5f;
     [SerializeField] private LayerMask interactorMask;
 
+    public bool otherUiActive = false;
+
     private void Start()
     {
         if (promptCanvas != null)
@@ -23,8 +25,19 @@ public class UIInteraction : MonoBehaviour
         // Prüfen, ob ein Interactible in Reichweite ist
         bool isInRange = Physics.CheckSphere(transform.position, detectionRadius, interactorMask);
 
-        // Canvas nur an, wenn etwas in Reichweite ist
-        promptCanvas.enabled = isInRange;
+        // Canvas nach 0.7 sekunden anschauen auch erst anzeigen und nur wenn bool otherUiActive false ist
+        if (isInRange)
+        {
+            if (!otherUiActive)
+            {
+                promptCanvas.enabled = true;
+            }
+        }
+        else
+        {
+            promptCanvas.enabled = false;
+
+        }
     }
 
     private void OnDrawGizmosSelected()
