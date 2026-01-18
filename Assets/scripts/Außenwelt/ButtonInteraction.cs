@@ -4,8 +4,13 @@ using UnityEngine.UI;
 public class ButtonInteraction : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-
+    
+    [Header ("Dialogue (optional)")]
+    
+    [SerializeField] private string dialogueKnotName;
+    
     [SerializeField] private DoorInteraction doorInteraction;
+    
 
     [SerializeField]Canvas bar;
     [SerializeField]Canvas park;
