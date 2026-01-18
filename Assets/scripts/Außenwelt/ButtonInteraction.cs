@@ -12,6 +12,9 @@ public class ButtonInteraction : MonoBehaviour
     [SerializeField] private DoorInteraction doorInteraction;
     
 
+    [SerializeField]Canvas bar;
+    [SerializeField]Canvas park;
+
 
     public void OnBack()
     {
@@ -19,15 +22,26 @@ public class ButtonInteraction : MonoBehaviour
         Debug.Log("Drinnen?");
         return;
     }
-
-    public void NPCDialogue()
+    //Open Bar Canvas / Close Bar Canvas
+    public void BarBetreten()
+    {        
+        bar.gameObject.SetActive(true);
+    }
+    public void BarVerlassen()
     {
-        GameEventsManager.instance.dialogueEvents.EnterDialogue("knotName");
-        if (!dialogueKnotName.Equals("knotName"))
-        {
-            GameEventsManager.instance.dialogueEvents.EnterDialogue("knotName");
-            Debug.Log("NPC Dialogue gestartet");           
-        }
-        return;
-     }
+        bar.gameObject.SetActive(false);
+    }
+
+    public void ParkBetreten()
+    {
+        park.gameObject.SetActive(true);
+    }
+    public void ParkVerlassen()
+    {
+        park.gameObject.SetActive(false);
+    }
+    public void NPC1()
+    {
+        Debug.Log("NPC1 interaction activated.");
+    }
 }

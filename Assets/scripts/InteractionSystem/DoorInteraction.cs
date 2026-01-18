@@ -15,6 +15,10 @@ public class DoorInteraction : MonoBehaviour, ImInteractible
     [SerializeField] private CinemachineCamera innenCam;
     [SerializeField] private CinemachineCamera auﬂenCam;
 
+    [SerializeField] UIInteraction uiInteraction;
+    
+
+
     public Canvas auﬂenWelt;
 
     public bool drauﬂen = false;
@@ -25,18 +29,19 @@ public class DoorInteraction : MonoBehaviour, ImInteractible
         door.OpenDoor();
 
         drauﬂen = !drauﬂen;
-
-        if (drauﬂen)
+       
+            if (drauﬂen)
         {
             player.FreezePlayer(true);
             auﬂenWelt.enabled = true;
             Cursor.lockState = CursorLockMode.None;
-            //check if promptCanvas is active and disable it
+            
             Debug.Log("Drauﬂen");
-            Debug.Log(UIInteraction.PromptCanvas);
+            uiInteraction.otherUiActive = true;
 
 
-            auﬂenCam.Priority = 10;
+
+                auﬂenCam.Priority = 10;
             innenCam.Priority = 0;
         }
         else
@@ -44,11 +49,12 @@ public class DoorInteraction : MonoBehaviour, ImInteractible
             player.FreezePlayer(false);
             auﬂenWelt.enabled = false;
             Cursor.lockState = CursorLockMode.Locked;
-
+            uiInteraction.otherUiActive = false;
 
             auﬂenCam.Priority = 0;
             innenCam.Priority = 10;
         }
+        
 
         return true;
 
@@ -70,7 +76,7 @@ public class DoorInteraction : MonoBehaviour, ImInteractible
         door.open = false;
         door.asource.clip = door.closeDoor;
         RotatePlayer();
-
+        uiInteraction.otherUiActive = false;
 
         auﬂenCam.Priority = 0;
         innenCam.Priority = 10;

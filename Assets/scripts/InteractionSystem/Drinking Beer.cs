@@ -6,6 +6,7 @@ public class DrinkingBeer : MonoBehaviour
     [SerializeField] private GameObject beerInHand;
     // new input system action for drinking
     [SerializeField] private InputAction drinkAction;
+    
 
     private void OnEnable()
     {

@@ -1901,7 +1901,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 649429250388766513}
-  - component: {fileID: 7647151352419628059}
   - component: {fileID: 6015049539128408946}
   - component: {fileID: 2124852040691565761}
   m_Layer: 0
@@ -1930,21 +1929,6 @@ Transform:
   - {fileID: 978830650643123774}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7647151352419628059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7587632861320239481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0480975976372479349e6efdb5ff77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UIInteraction
-  phoneUI: {fileID: 7587632861320239481}
-  playerController: {fileID: 0}
-  FakeisUIActive: 0
 --- !u!114 &6015049539128408946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1957,8 +1941,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33368b7de8ac0e418be706b3b882f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Phone
-  uiinteraction: {fileID: 7647151352419628059}
   prompt: 
+  tablePhone: {fileID: 0}
+  cameraPhone: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &2124852040691565761
 MonoBehaviour:
   m_ObjectHideFlags: 0
