@@ -10,6 +10,8 @@ public class DialogueManager : MonoBehaviour
 
     private Story story;
 
+    private int currentChoiceIndex = -1;
+
     private bool dialogueActive = false;
 
     private void Awake()
@@ -20,12 +22,19 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         GameEventsManager.instance.dialogueEvents.OnEnterDialogue += EnterDialogue;
+        GameEventsManager.instance.dialogueEvents.onUpdateChoiceIndex += UpdateChoiceIndex;
     }
 
     private void OnDisable()
     {
         if (GameEventsManager.instance != null)
             GameEventsManager.instance.dialogueEvents.OnEnterDialogue -= EnterDialogue;
+            GameEventsManager.instance.dialogueEvents.onUpdateChoiceIndex -= UpdateChoiceIndex;
+    }
+
+    private void UpdateChoiceIndex(int choiceIndex)
+    {
+        this.currentChoiceIndex = choiceIndex;
     }
 
     private void Update()
@@ -65,12 +74,18 @@ public class DialogueManager : MonoBehaviour
 
     private void ContinueOrExitStory()
     {
+        if (story.currentChoices.Count > 0 && currentChoiceIndex != -1)
+        {
+            story.ChooseChoiceIndex(currentChoiceIndex);
+            currentChoiceIndex = -1;
+        }
+
         if (story.canContinue)
         {
             string dialogueLine = story.Continue();
-            GameEventsManager.instance.dialogueEvents.DisplayDialogue(dialogueLine);
+            GameEventsManager.instance.dialogueEvents.DisplayDialogue(dialogueLine, story.currentChoices);
         }
-        else
+        else if (story.currentChoices.Count == 0)
         {
             StartCoroutine(ExitDialogue());
         }
