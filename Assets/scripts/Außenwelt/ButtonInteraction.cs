@@ -61,8 +61,14 @@ public class ButtonInteraction : MonoBehaviour
         alley.gameObject.SetActive(true);
         baerberShop.gameObject.SetActive(false);
     }
-    public void NPC1()
+    public void NPCDialogue()
     {
-        Debug.Log("NPC1 interaction activated.");
+        GameEventsManager.instance.dialogueEvents.EnterDialogue("knotName");
+        if (!dialogueKnotName.Equals("knotName"))
+        {
+            GameEventsManager.instance.dialogueEvents.EnterDialogue("knotName");
+            Debug.Log("NPC1 interaction activated und so.");
+        }
+        return;
     }
 }
