@@ -14,7 +14,8 @@ public class ButtonInteraction : MonoBehaviour
 
     [SerializeField]Canvas bar;
     [SerializeField]Canvas park;
-
+    [SerializeField] Canvas alley;
+    [SerializeField] Canvas baerberShop;
 
     public void OnBack()
     {
@@ -29,6 +30,7 @@ public class ButtonInteraction : MonoBehaviour
     }
     public void BarVerlassen()
     {
+        alley.gameObject.SetActive(true);
         bar.gameObject.SetActive(false);
     }
 
@@ -39,6 +41,25 @@ public class ButtonInteraction : MonoBehaviour
     public void ParkVerlassen()
     {
         park.gameObject.SetActive(false);
+    }
+    public void AlleyBetreten()
+    {
+        alley.gameObject.SetActive(true);
+    }
+    public void AlleyVerlassen()
+    {
+        alley.gameObject.SetActive(false);
+        baerberShop.gameObject.SetActive(false);
+        bar.gameObject.SetActive(false);
+    }
+    public void BaerberShopBetreten()
+    {
+        baerberShop.gameObject.SetActive(true);
+    }
+    public void BaerberShopVerlassen()
+    {
+        alley.gameObject.SetActive(true);
+        baerberShop.gameObject.SetActive(false);
     }
     public void NPC1()
     {

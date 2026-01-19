@@ -13,8 +13,14 @@ public class NightManager : MonoBehaviour
     [SerializeField] private Material nightSkyboxMaterial;
     [SerializeField] private Material daySkyboxMaterial;
 
+    [SerializeField] private GameObject dayWindowLigt1;
+    [SerializeField] private GameObject dayWindowLigt2;
+
     [SerializeField] private GameObject dayCity;
     [SerializeField] private GameObject nightCity;
+
+    [SerializeField] private GameObject dayAlley;
+    [SerializeField] private GameObject nightAlley;
     public void Start()
     {
         skybox.gameObject.SetActive(false);
@@ -23,6 +29,9 @@ public class NightManager : MonoBehaviour
         RenderSettings.skybox = daySkyboxMaterial;
         dayCity.gameObject.SetActive(true);
         nightCity.gameObject.SetActive(false);
+        dayWindowLigt1.gameObject.SetActive(true);
+        dayWindowLigt2.gameObject.SetActive(true);
+
     }
     public void SetNight(bool night)
     {
@@ -36,6 +45,8 @@ public class NightManager : MonoBehaviour
             //activate night city image and deactivate day city image
             dayCity.gameObject.SetActive(false);
             nightCity.gameObject.SetActive(true);
+            dayWindowLigt1.gameObject.SetActive(false);
+            dayWindowLigt2.gameObject.SetActive(false);
         }
         else
         {
@@ -44,6 +55,8 @@ public class NightManager : MonoBehaviour
             skybox.gameObject.SetActive(false);
             dayCity.gameObject.SetActive(true);
             nightCity.gameObject.SetActive(false);
+            dayWindowLigt1.gameObject.SetActive(true);
+            dayWindowLigt2.gameObject.SetActive(true);
         }
     }
     public void SetDay(bool day)
