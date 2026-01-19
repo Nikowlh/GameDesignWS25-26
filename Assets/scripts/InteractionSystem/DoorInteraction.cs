@@ -71,7 +71,7 @@ public class DoorInteraction : MonoBehaviour, ImInteractible
     {
         drauﬂen = !drauﬂen;
         player.FreezePlayer(false);
-       
+       Debug.Log("Drinnen?");
         Cursor.lockState = CursorLockMode.Locked;
         door.open = false;
         door.asource.clip = door.closeDoor;
