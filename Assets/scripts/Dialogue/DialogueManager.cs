@@ -35,6 +35,7 @@ public class DialogueManager : MonoBehaviour
     private void UpdateChoiceIndex(int choiceIndex)
     {
         this.currentChoiceIndex = choiceIndex;
+        ContinueOrExitStory();
     }
 
     private void Update()
@@ -43,7 +44,7 @@ public class DialogueManager : MonoBehaviour
         {
             return;
         }
-        if (Input .GetMouseButtonDown(0))
+        if (story.currentChoices.Count == 0 && Input.GetMouseButtonDown(0))
         {
             ContinueOrExitStory();
         }
@@ -80,15 +81,19 @@ public class DialogueManager : MonoBehaviour
             currentChoiceIndex = -1;
         }
 
-        if (story.canContinue)
+        while (story.canContinue)
         {
-            string dialogueLine = story.Continue();
-            GameEventsManager.instance.dialogueEvents.DisplayDialogue(dialogueLine, story.currentChoices);
+            string line = story.Continue();
+
+            if (string.IsNullOrWhiteSpace(line))
+                continue; // leere Zeilen überspringen
+
+            GameEventsManager.instance.dialogueEvents.DisplayDialogue(line, story.currentChoices);
+            return;
         }
-        else if (story.currentChoices.Count == 0)
-        {
+
+        if (story.currentChoices.Count == 0)
             StartCoroutine(ExitDialogue());
-        }
     }
 
     private IEnumerator ExitDialogue()

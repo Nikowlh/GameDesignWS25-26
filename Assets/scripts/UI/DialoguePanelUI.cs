@@ -59,22 +59,14 @@ public class DialoguePanelUI : MonoBehaviour
             ChoiceButton.gameObject.SetActive(false);
         }
 
-        int ChoiceButtonIndex = dialogueChoices.Count - 1;
-        for (int inkChoiceIndex = 0; inkChoiceIndex < dialogueChoices.Count; inkChoiceIndex++)
+        for (int i = 0; i < dialogueChoices.Count; i++)
         {
-            Choice dialougueChoice = dialogueChoices[inkChoiceIndex];
-            DialogueChoiceButton ChoiceButton = choiceButtons[ChoiceButtonIndex];
-            ChoiceButton.gameObject.SetActive(true);
-            ChoiceButton.SetChoiceText(dialougueChoice.text);
-            ChoiceButton.SetChoiseIndex(inkChoiceIndex);
+            Choice dialogueChoice = dialogueChoices[i];
+            DialogueChoiceButton choiceButton = choiceButtons[i];
 
-            if (inkChoiceIndex == 0)
-            {
-                ChoiceButton.SelectButton();
-                GameEventsManager.instance.dialogueEvents.UpdateChoiceIndex(0);
-            }
-
-            ChoiceButtonIndex--;
+            choiceButton.gameObject.SetActive(true);
+            choiceButton.SetChoiceText(dialogueChoice.text);
+            choiceButton.SetChoiseIndex(i);
         }
 
     }

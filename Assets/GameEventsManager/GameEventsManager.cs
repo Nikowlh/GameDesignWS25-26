@@ -11,7 +11,7 @@ public class GameEventsManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogError("Mehr als eine Instanz von GameEventsManager gefunden! Lösche das Duplikat.");
+            Debug.LogError("Mehr als eine Instanz von GameEventsManager gefunden! Lösche das DSlikat.");
         }
         instance = this;
 

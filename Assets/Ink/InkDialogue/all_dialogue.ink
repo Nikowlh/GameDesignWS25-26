@@ -6,6 +6,5 @@ willst du mir helfen den Fall zu lösen?
 * [Nein]
     Du kleiner Scheißer!
 *[Wer bist du überhaupt?]
-    geht dich gar nichts an 
-
+    geht dich gar nichts an
 - -> END

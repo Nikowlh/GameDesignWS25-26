@@ -30,4 +30,14 @@ public class DialogueChoiceButton : MonoBehaviour
     {
         button.Select();
     }
+
+    public void OnClick()
+    {
+        if (choiceIndex == -1)
+        {
+            Debug.LogError("Ungültiger Choice Index: " + choiceIndex);
+            return;
+        }
+        GameEventsManager.instance.dialogueEvents.UpdateChoiceIndex(choiceIndex);
+    }
 }
