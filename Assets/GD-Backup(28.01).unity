@@ -483,8 +483,9 @@ GameObject:
   - component: {fileID: 122639134}
   - component: {fileID: 122639133}
   - component: {fileID: 122639135}
+  - component: {fileID: 122639136}
   m_Layer: 5
-  m_Name: NPC1
+  m_Name: main_charakter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -593,7 +594,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 788795582}
+      - m_Target: {fileID: 122639136}
         m_TargetAssemblyTypeName: ButtonInteraction, Assembly-CSharp
         m_MethodName: NPCDialogue
         m_Mode: 1
@@ -605,6 +606,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &122639136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122639131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e70144f8cb00184081e45efb3555b1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonInteraction
+  dialogueKnotName: main_charakter
+  doorInteraction: {fileID: 0}
+  bar: {fileID: 0}
+  park: {fileID: 0}
+  alley: {fileID: 0}
+  baerberShop: {fileID: 0}
 --- !u!1001 &140054632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5399,7 +5418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e70144f8cb00184081e45efb3555b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonInteraction
-  dialogueKnotName: NPC1
+  dialogueKnotName: 
   doorInteraction: {fileID: 865296480}
   bar: {fileID: 237954858}
   park: {fileID: 986309663}
@@ -6646,7 +6665,7 @@ GameObject:
   - component: {fileID: 882564943}
   - component: {fileID: 882564942}
   m_Layer: 5
-  m_Name: NPC1
+  m_Name: main_charakter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12067,7 +12086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a163454404acfd4cb60ec13a50242d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  inkJson: {fileID: 4900000, guid: 9814deac1515b5f4093616f705d97751, type: 3}
+  inkJson: {fileID: 4900000, guid: 82f62529ed62a2840b64f062617c003c, type: 3}
 --- !u!4 &1660729745
 Transform:
   m_ObjectHideFlags: 0

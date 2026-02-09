@@ -6,13 +6,13 @@ using Ink.Runtime;
 
 public class DialogueEvents
 {
-    public event Action<string> OnEnterDialogue;
+    public event Action<string> onEnterDialogue;
 
     public void EnterDialogue(string knotName)
     {
-        if (OnEnterDialogue != null)
+        if (onEnterDialogue != null)
         {
-            OnEnterDialogue.Invoke(knotName);
+            onEnterDialogue.Invoke(knotName);
         }
     }
     public event Action OnDialogueStarted;
@@ -46,13 +46,23 @@ public class DialogueEvents
         }
     }
 
-    public event Action<int> onUpdateChoiceIndex;
+    public event Action<int> onUpdateChoiceIndex; 
 
     public void UpdateChoiceIndex(int choiceIndex)
     {
         if (onUpdateChoiceIndex != null)
         {
             onUpdateChoiceIndex(choiceIndex);
+        }
+    }
+
+    public event Action<string, Ink.Runtime.Object> onUpdateInkDialogueVariable;
+
+    public void UpdateInkDialogueVariable(string name, Ink.Runtime.Object value)
+    {
+        if (onUpdateInkDialogueVariable != null)
+        {
+            onUpdateInkDialogueVariable(name, value);
         }
     }
 }

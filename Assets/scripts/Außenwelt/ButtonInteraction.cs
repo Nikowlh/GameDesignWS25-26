@@ -63,12 +63,12 @@ public class ButtonInteraction : MonoBehaviour
     }
     public void NPCDialogue()
     {
-        GameEventsManager.instance.dialogueEvents.EnterDialogue("knotName");
-        if (!dialogueKnotName.Equals("knotName"))
+        if (string.IsNullOrEmpty(dialogueKnotName))
         {
-            GameEventsManager.instance.dialogueEvents.EnterDialogue("knotName");
-            Debug.Log("NPC1 interaction activated und so.");
+            Debug.LogWarning("Dialogue knot name is empty on " + gameObject.name);
+            return;
         }
-        return;
+
+        GameEventsManager.instance.dialogueEvents.EnterDialogue(dialogueKnotName);
     }
 }

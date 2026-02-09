@@ -10,8 +10,8 @@ public class DialoguePanelUI : MonoBehaviour
     [Header("Components")]
     [SerializeField] private GameObject contentParent;
     [SerializeField] private TextMeshProUGUI dialogueText;
-    [SerializeField] private DialogueChoiceButton[] choiceButtons;
-
+    [SerializeField] private DialogueChoiceButton[] choiceButtons; 
+    
     private void Awake()
     {
         contentParent.SetActive(false);

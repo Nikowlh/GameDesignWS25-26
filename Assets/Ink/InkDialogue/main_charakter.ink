@@ -1,4 +1,4 @@
-=== knotName ===
+=== main_charakter ===
 
 willst du mir helfen den Fall zu lösen?
 * [Ja] 
