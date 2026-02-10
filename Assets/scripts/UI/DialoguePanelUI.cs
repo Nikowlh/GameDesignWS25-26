@@ -34,6 +34,7 @@ public class DialoguePanelUI : MonoBehaviour
 
     private void DialogueStarted()
     {
+        Debug.Log("DialoguePanelUI: DialogueStarted received");
         contentParent.SetActive(true);
     }
 
