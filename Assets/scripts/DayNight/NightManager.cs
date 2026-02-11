@@ -22,8 +22,11 @@ public class NightManager : MonoBehaviour
     [SerializeField] private GameObject dayAlley;
     [SerializeField] private GameObject nightAlley;
 
-    [SerializeField] private GameObject alleyDC;
-    [SerializeField] private GameObject alleyNC;
+    [SerializeField] private GameObject dayPark;
+    [SerializeField] private GameObject nightPark;
+
+    [SerializeField] private GameObject dayParkbank;
+    [SerializeField] private GameObject nightParkbank;
 
 
     public void Start()
@@ -36,6 +39,12 @@ public class NightManager : MonoBehaviour
         nightCity.gameObject.SetActive(false);
         dayWindowLigt1.gameObject.SetActive(true);
         dayWindowLigt2.gameObject.SetActive(true);
+        dayPark.gameObject.SetActive(true);
+        nightPark.gameObject.SetActive(false);
+        dayAlley.gameObject.SetActive(true);
+        nightAlley.gameObject.SetActive(false);
+        dayParkbank.gameObject.SetActive(true);
+        nightParkbank.gameObject.SetActive(false);
 
     }
     public void SetNight(bool night)
@@ -47,13 +56,17 @@ public class NightManager : MonoBehaviour
             stehlampe.enabled = true;
             Tischlampe.enabled = true;
             RenderSettings.skybox = nightSkyboxMaterial;
-            //activate night city image and deactivate day city image
+            //activate night and day
             dayCity.gameObject.SetActive(false);
             nightCity.gameObject.SetActive(true);
             dayWindowLigt1.gameObject.SetActive(false);
             dayWindowLigt2.gameObject.SetActive(false);
             dayAlley.gameObject.SetActive(false);
             nightAlley.gameObject.SetActive(true);
+            dayPark.gameObject.SetActive(false);
+            nightPark.gameObject.SetActive(true);
+            dayParkbank.gameObject.SetActive(false);
+            nightParkbank.gameObject.SetActive(true);
 
         }
         else
@@ -67,6 +80,10 @@ public class NightManager : MonoBehaviour
             dayWindowLigt2.gameObject.SetActive(true);
             dayAlley.gameObject.SetActive(true);
             nightAlley.gameObject.SetActive(false);
+            dayPark.gameObject.SetActive(true);
+            nightPark.gameObject.SetActive(false);
+            dayParkbank.gameObject.SetActive(true);
+            nightParkbank.gameObject.SetActive(false);
 
 
         }

@@ -16,6 +16,7 @@ public class ButtonInteraction : MonoBehaviour
     [SerializeField] Canvas park;
     [SerializeField] Canvas alley;
     [SerializeField] Canvas baerberShop;
+    [SerializeField] Canvas parkbank;
 
     public void OnBack()
     {
@@ -61,6 +62,16 @@ public class ButtonInteraction : MonoBehaviour
         alley.gameObject.SetActive(true);
         baerberShop.gameObject.SetActive(false);
     }
+    public void ParkbankBetreten()
+    {
+        parkbank.gameObject.SetActive(true);
+    }
+    public void ParkbankVerlassen()
+    {
+        park.gameObject.SetActive(true);
+        parkbank.gameObject.SetActive(false);
+    }
+
     public void NPCDialogue()
     {
         if (string.IsNullOrEmpty(dialogueKnotName))
