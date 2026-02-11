@@ -2,11 +2,18 @@ using System.Collections;
 using System.Collections.Generic;   
 using UnityEngine;
 using Ink.Runtime;
+using UnityEngine.UI;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
     [Header ("Ink Story")]
     [SerializeField] private TextAsset inkJson;
+
+    [SerializeField] private TextMeshProUGUI diaplayNameText;
+
+    [SerializeField] private Image portraitImage;
+    [SerializeField] private string portraitsResourcesFolder = "Portraits";
 
     private Story story;
 
@@ -15,6 +22,10 @@ public class DialogueManager : MonoBehaviour
     private bool dialogueActive = false;
 
     private InkDialogueVariables inkDialogueVariables;
+
+    private const string SPEAKER_TAG = "speaker";
+
+    private const string PORTRAIT_TAG = "portrait";
 
     private void Awake()
     {
@@ -32,7 +43,7 @@ public class DialogueManager : MonoBehaviour
 
     private void OnDisable()
     {
-        if (GameEventsManager.instance != null) return;
+        if (GameEventsManager.instance == null) return;
             
         GameEventsManager.instance.dialogueEvents.onEnterDialogue -= EnterDialogue;
         GameEventsManager.instance.dialogueEvents.onUpdateChoiceIndex -= UpdateChoiceIndex;
@@ -115,11 +126,60 @@ public class DialogueManager : MonoBehaviour
                 continue; // leere Zeilen überspringen
 
             GameEventsManager.instance.dialogueEvents.DisplayDialogue(line, story.currentChoices);
-            return;
+
+            HandleTags(story.currentTags);
+
+            return;   
         }
 
         if (story.currentChoices.Count == 0)
             StartCoroutine(ExitDialogue());
+    }
+
+    private void HandleTags(List<string> currentTags)
+    {
+        foreach (string tag in currentTags)
+        {
+            string[] splitTag = tag.Split(':');
+            if (splitTag.Length != 2)
+            {
+                Debug.LogWarning("Ungültiges Tag-Format: " + tag);
+                continue;
+            }
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+
+            switch (tagKey)
+            {
+                case SPEAKER_TAG:
+                    diaplayNameText.text = tagValue;
+                    break;
+                case PORTRAIT_TAG:
+                    SetPortrait(tagValue);
+                    break;
+                default:
+                    Debug.LogWarning("Unbekanntes Tag: " + tag);
+                    break;
+            }
+        }
+    }
+
+    private void SetPortrait(string portraitId)
+    {
+        if (portraitImage == null) return;
+        
+        Sprite sprite = Resources.Load<Sprite>($"{portraitsResourcesFolder}/{portraitId}");
+
+        if (sprite == null)
+        {
+            Debug.LogWarning($"Portrait not found in Resources: {portraitsResourcesFolder}/{portraitId}");
+            portraitImage.enabled = false;
+            return;
+        }
+        
+        portraitImage.sprite = sprite;
+        portraitImage.enabled = true;
+
     }
 
     private IEnumerator ExitDialogue()

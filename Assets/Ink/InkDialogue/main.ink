@@ -6,3 +6,4 @@ INCLUDE glatzkopf_npc.ink
 INCLUDE obdachloser_npc.ink
 INCLUDE oma_npc.ink
 INCLUDE polizist_npc.ink
+INCLUDE zutritt_verboten.ink

@@ -14,7 +14,7 @@ public class LightSwitch : MonoBehaviour, ImInteractible
 
     public bool Interactor(Interactor interactor)
     {
-        Debug.Log("Bed interaction activated.");
+        Debug.Log("Light interaction activated.");
         return true;
     }
 }
