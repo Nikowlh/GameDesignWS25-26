@@ -6,7 +6,7 @@
 }
 
 === oma_new ===
-# speaker: Oma
+# speaker: Hilde
 # portrait: OmaPortrait
 
 Ach… Sie sind doch dieser Reporter, nicht wahr?
@@ -33,7 +33,7 @@ Er war ja eigentlich ganz nett… für einen von denen.
 Aber irgendwie denke ich, dass da doch noch etwas war ... aber was nur.
 
 === oma_met ===
-# speaker: Oma
+# speaker: Hilde
 # portrait: OmaPortrait
 
 Er war ja eigentlich ganz nett… für einen von denen.

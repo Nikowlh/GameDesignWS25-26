@@ -6,15 +6,19 @@
 }
 
 === obdachloser_night_new ===
-# speaker: Obdachloser
+# speaker: Max
 # portrait: ObdachloserPortrait
 
-Es ist so kalt ... 
+Scheiße! Scheiße! Ich habe wohl doch zu viel gesagt! 
 
+Vielleicht suche ich mir einen Neuen Park. 
+~ obdachloser_night_npc_state = "met"
 -> END
 
 === obdachloser_night_met ===
-# speaker: Obdachloser
+# speaker: Max
 # portrait: ObdachloserPortrait
+    
+Alles deine Schuld! Was legst du dich denn auch mit solchen Leuten an? 
 
 - -> END

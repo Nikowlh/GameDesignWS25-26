@@ -4,7 +4,7 @@ public class PhoneDatabase : MonoBehaviour
 {
     [Header("Fixed number (6 digits)")]
     public string fixedNumber = "123456";
-    public string karlNumber = "654321";
+    public string hansNumber = "114420";
 
     public bool TryCall(string dialedNumber)
     {
@@ -15,9 +15,9 @@ public class PhoneDatabase : MonoBehaviour
             Debug.Log("wird angerufen: " + n);
             return true;
         }
-        if (n == karlNumber)
+        if (n == hansNumber)
         {
-            Debug.Log("Karl du huanshohn " + n);
+            Debug.Log("Hans seine Nummer" + n);
             return true;
         }
 
