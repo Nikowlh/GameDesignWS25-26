@@ -32,10 +32,6 @@ public class InkDialogueVariables
 
     public void UpdateVariableState(string name, Ink.Runtime.Object value)
     {
-        if (!variables.ContainsKey(name))
-        {
-            return;
-        }
         variables[name] = value;
         Debug.Log("Updated dialogue variable: " + name + " = " + value);
     }
