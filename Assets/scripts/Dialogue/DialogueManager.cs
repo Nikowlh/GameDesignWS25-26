@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;   
 using UnityEngine;
 using Ink.Runtime;
@@ -96,6 +96,8 @@ public class DialogueManager : MonoBehaviour
 
         GameEventsManager.instance.dialogueEvents.DialogueStarted();
 
+        inkDialogueVariables.SyncVariablesAndStartListening(story);
+
         if (!knotName.Equals(""))
         {
             story.ChoosePathString(knotName);
@@ -103,9 +105,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             Debug.LogWarning("Knot name is empty!");
-        }
-
-        inkDialogueVariables.SyncVariablesAndStartListening(story);
+        }        
 
         ContinueOrExitStory();
     }
@@ -123,7 +123,7 @@ public class DialogueManager : MonoBehaviour
             string line = story.Continue();
 
             if (string.IsNullOrWhiteSpace(line))
-                continue; // leere Zeilen überspringen
+                continue; // leere Zeilen Ã¼berspringen
 
             GameEventsManager.instance.dialogueEvents.DisplayDialogue(line, story.currentChoices);
 
@@ -143,7 +143,7 @@ public class DialogueManager : MonoBehaviour
             string[] splitTag = tag.Split(':');
             if (splitTag.Length != 2)
             {
-                Debug.LogWarning("Ungültiges Tag-Format: " + tag);
+                Debug.LogWarning("UngÃ¼ltiges Tag-Format: " + tag);
                 continue;
             }
             string tagKey = splitTag[0].Trim();

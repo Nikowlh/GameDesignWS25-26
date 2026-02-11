@@ -30,6 +30,9 @@ public class NightManager : MonoBehaviour
     [SerializeField] private GameObject dayParkbank;
     [SerializeField] private GameObject nightParkbank;
 
+    [SerializeField] private GameObject dayBar;
+    [SerializeField] private GameObject nightBar;
+
 
     public void Start()
     {
@@ -49,6 +52,8 @@ public class NightManager : MonoBehaviour
         nightParkbank.gameObject.SetActive(false);
         dayWindowLigt3.gameObject.SetActive(true);
         dayWindowLigt4.gameObject.SetActive(true);
+        dayBar.gameObject.SetActive(true);
+        nightBar.gameObject.SetActive(false);
 
     }
     public void SetNight(bool night)
@@ -73,6 +78,8 @@ public class NightManager : MonoBehaviour
             nightPark.gameObject.SetActive(true);
             dayParkbank.gameObject.SetActive(false);
             nightParkbank.gameObject.SetActive(true);
+            dayBar.gameObject.SetActive(false);
+            nightBar.gameObject.SetActive(true);
 
         }
         else
@@ -92,6 +99,8 @@ public class NightManager : MonoBehaviour
             nightPark.gameObject.SetActive(false);
             dayParkbank.gameObject.SetActive(true);
             nightParkbank.gameObject.SetActive(false);
+            dayBar.gameObject.SetActive(true);
+            dayBar.gameObject.SetActive(false);
 
 
         }
