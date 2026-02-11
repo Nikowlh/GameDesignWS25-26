@@ -21,6 +21,11 @@ public class NightManager : MonoBehaviour
 
     [SerializeField] private GameObject dayAlley;
     [SerializeField] private GameObject nightAlley;
+
+    [SerializeField] private GameObject alleyDC;
+    [SerializeField] private GameObject alleyNC;
+
+
     public void Start()
     {
         skybox.gameObject.SetActive(false);
@@ -47,6 +52,9 @@ public class NightManager : MonoBehaviour
             nightCity.gameObject.SetActive(true);
             dayWindowLigt1.gameObject.SetActive(false);
             dayWindowLigt2.gameObject.SetActive(false);
+            dayAlley.gameObject.SetActive(false);
+            nightAlley.gameObject.SetActive(true);
+
         }
         else
         {
@@ -57,6 +65,10 @@ public class NightManager : MonoBehaviour
             nightCity.gameObject.SetActive(false);
             dayWindowLigt1.gameObject.SetActive(true);
             dayWindowLigt2.gameObject.SetActive(true);
+            dayAlley.gameObject.SetActive(true);
+            nightAlley.gameObject.SetActive(false);
+
+
         }
     }
     public void SetDay(bool day)
@@ -79,6 +91,7 @@ public class NightManager : MonoBehaviour
             RenderSettings.skybox = nightSkyboxMaterial;
             dayCity.gameObject.SetActive(false);
             nightCity.gameObject.SetActive(true);
+
         }
     }
 }
