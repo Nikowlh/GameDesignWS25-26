@@ -98,7 +98,7 @@ public class PhoneLogic : MonoBehaviour
             if (buttonhit.transform.gameObject == callButton)
             {
                 Debug.Log("Call button pressed. Attempting to call " + enteredNumber);
-                database.TryCall(enteredNumber);
+               // MakeCall(enteredNumber);
                 return;
             }
             if (buttonhit.transform.gameObject == exitButton)
