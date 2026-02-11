@@ -1,3 +1,5 @@
+using Unity;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 public class BedButtonManager : MonoBehaviour
@@ -31,6 +33,14 @@ public class BedButtonManager : MonoBehaviour
         nightManager.SetDay(true);
         uiInteraction.otherUiActive = false;
         bedMenu.gameObject.SetActive(false);
+        player.FreezePlayer(false);
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void Zurück()
+    {
+        bedMenu.gameObject.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         player.FreezePlayer(false);
         Cursor.lockState = CursorLockMode.Locked;
     }

@@ -17,7 +17,7 @@ Es handelt sich hier um einen Klaren Fall
     Ich habe genug Erfahrung gesammelt um zu wissen wie diese Leute ticken.
     Also eindeutig ein Familien Verbrechen
     ~ polizist_npc_state = "met"
-* [Was für Untersuchungen haben Sie bereits angestellt?] 
+* [Was für Untersuchungen wurden angestelt?] 
     Wir haben die Tatwaffe sichergestellt und warten jetzt auf was das Labor sagt.
     Mehr kann man da gerade nicht tun.
     ~ polizist_npc_state = "met"
@@ -41,7 +41,7 @@ Es handelt sich hier um einen Klaren Fall
     Ich habe genug Erfahrung gesammelt um zu wissen wie diese Leute ticken.
     Also eindeutig ein Familien Verbrechen
 
-* [Was für Untersuchungen haben Sie bereits angestellt?] 
+* [Was für Untersuchungen wurden angestellt?] 
     Wir haben die Tatwaffe sichergestellt und warten jetzt auf was das Labor sagt.
     Mehr kann man da gerade nicht tun.
 

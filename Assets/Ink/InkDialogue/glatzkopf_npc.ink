@@ -6,15 +6,22 @@
 }
 
 === glatzkopf_new ===
-# speaker: Glatzkopf
+# speaker: ???
 # portrait: GlatzkopfPortrait
 
-Was Zitterst n du so?
+Hey Du! 
+Du bist also der Reporter von dem man gerade so viel hört. 
+Für jemanden, der neu in der Stadt ist, bewegen Sie sich ziemlich… neugierig.
+Konzentrieren Sie sich lieber auf die Familie.
+Da finden Sie bestimmt, was Sie suchen.
+~ glatzkopf_npc_state = "met"
 
 -> END
 
 === glatzkopf_met ===
-# speaker: Glatzkopf
+# speaker: ???
 # portrait: GlatzkopfPortrait
 
+Unfälle passieren schnell. Besonders, wenn man sich in fremde Angelegenheiten einmischt. 
+~ glatzkopf_npc_state = "met"
 - -> END

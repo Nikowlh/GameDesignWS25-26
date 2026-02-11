@@ -6,7 +6,7 @@
 }
 
 === bartyp_new ===
-# speaker: Bartyp
+# speaker: Hans
 # portrait: BartypPortrait
 
 Was Zitterst du denn so?
@@ -14,7 +14,7 @@ Was Zitterst du denn so?
 -> END
 
 === bartyp_met ===
-# speaker: Bartyp
+# speaker: Hans
 # portrait: BartypPortrait
 
 - -> END

@@ -2,12 +2,11 @@
 { obdachloser_npc_state == "new":
     -> obdachloser_new
 - else: 
-    -> obdachloser_met
+    -> obdachloser_bier
 }   
 
-
 === obdachloser_new ===
-# speaker: Obdachloser
+# speaker: Max
 # portrait: ObdachloserPortrait
 
 Bisschen Kleingeld?
@@ -22,29 +21,15 @@ Also? Kaufst du mir in der Bar ein Bier?
 
 * [Ja, mach ich!] 
     Perfekt! Dann warte ich hier solange.
-    ~ obdachloser_npc_state = "met"
     ~ barkeeper_npc_state = "bier"
+    
 * [Nein, für sowas habe ich keine Zeit!] 
     Pff! Dann zisch ab, wenn du es dir nicht anders überlegst.
-    ~ obdachloser_npc_state = "met"
 
 --> END
 
-=== obdachloser_met ===
-# speaker: Obdachloser
-# portrait: ObdachloserPortrait
-Also? Kaufst du mir in der Bar ein Bier?
-
-* [Ja, mach ich!] 
-    Perfekt! Dann warte ich hier solange.
-
-* [Nein, für sowas habe ich keine Zeit!] 
-    Pff! Dann zisch ab, wenn du es dir nicht anders überlegst.
-
-- -> END
-
 === obdachloser_bier ===
-# speaker: Obdachloser
+# speaker: Max
 # portrait: ObdachloserPortrait
 
 Ahhh! Du hast mir ja wirklich eins geholt. 
@@ -61,12 +46,3 @@ GLUCK GLUCK GLUCK
     ~ obdachloser_npc_state = "angst"
     
 -> END
-
-=== obdachloser_angst ===
-# speaker: Obdachloser
-# portrait: ObdachloserPortrait
-
-Ich hab schon zu viel gesagt! 
-~ obdachloser_npc_state = "angst"
-
-- -> END

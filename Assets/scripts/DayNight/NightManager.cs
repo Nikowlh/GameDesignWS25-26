@@ -33,6 +33,8 @@ public class NightManager : MonoBehaviour
     [SerializeField] private GameObject dayBar;
     [SerializeField] private GameObject nightBar;
 
+    [SerializeField] private GameObject endBildschirm;
+
 
     public void Start()
     {
@@ -116,6 +118,8 @@ public class NightManager : MonoBehaviour
             RenderSettings.skybox = daySkyboxMaterial;
             dayCity.gameObject.SetActive(true);
             nightCity.gameObject.SetActive(false);
+            endBildschirm.gameObject.SetActive(true);
+
         }
         else
         {
