@@ -12,8 +12,8 @@ public class ButtonInteraction : MonoBehaviour
     [SerializeField] private DoorInteraction doorInteraction;
     
 
-    [SerializeField]Canvas bar;
-    [SerializeField]Canvas park;
+    [SerializeField] Canvas bar;
+    [SerializeField] Canvas park;
     [SerializeField] Canvas alley;
     [SerializeField] Canvas baerberShop;
 
