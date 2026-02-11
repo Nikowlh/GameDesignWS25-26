@@ -15,6 +15,8 @@ public class NightManager : MonoBehaviour
 
     [SerializeField] private GameObject dayWindowLigt1;
     [SerializeField] private GameObject dayWindowLigt2;
+    [SerializeField] private GameObject dayWindowLigt3;
+    [SerializeField] private GameObject dayWindowLigt4;
 
     [SerializeField] private GameObject dayCity;
     [SerializeField] private GameObject nightCity;
@@ -45,6 +47,8 @@ public class NightManager : MonoBehaviour
         nightAlley.gameObject.SetActive(false);
         dayParkbank.gameObject.SetActive(true);
         nightParkbank.gameObject.SetActive(false);
+        dayWindowLigt3.gameObject.SetActive(true);
+        dayWindowLigt4.gameObject.SetActive(true);
 
     }
     public void SetNight(bool night)
@@ -61,6 +65,8 @@ public class NightManager : MonoBehaviour
             nightCity.gameObject.SetActive(true);
             dayWindowLigt1.gameObject.SetActive(false);
             dayWindowLigt2.gameObject.SetActive(false);
+            dayWindowLigt3.gameObject.SetActive(true);
+            dayWindowLigt4.gameObject.SetActive(false);
             dayAlley.gameObject.SetActive(false);
             nightAlley.gameObject.SetActive(true);
             dayPark.gameObject.SetActive(false);
@@ -78,6 +84,8 @@ public class NightManager : MonoBehaviour
             nightCity.gameObject.SetActive(false);
             dayWindowLigt1.gameObject.SetActive(true);
             dayWindowLigt2.gameObject.SetActive(true);
+            dayWindowLigt3.gameObject.SetActive(true);
+            dayWindowLigt4.gameObject.SetActive(true);
             dayAlley.gameObject.SetActive(true);
             nightAlley.gameObject.SetActive(false);
             dayPark.gameObject.SetActive(true);

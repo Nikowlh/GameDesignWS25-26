@@ -39,5 +39,11 @@ public class DialogueChoiceButton : MonoBehaviour
             return;
         }
         GameEventsManager.instance.dialogueEvents.UpdateChoiceIndex(choiceIndex);
+
+        if (GameEventsManager.instance == null)
+        {
+            Debug.LogError("GameEventsManager.instance is NULL");
+            return;
+        }
     }
 }
